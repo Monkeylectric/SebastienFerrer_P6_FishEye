@@ -1,0 +1,325 @@
+@import url("style.css");
+
+#photographer_profile {
+    background-color: var(--secondary-gray-bg);
+    margin: 0 100px;
+    padding: 50px;
+    position: relative;
+}
+#profil_photographer_photo {
+    height: 180px;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    width: 180px;
+    object-fit: cover;
+}
+#profile_contact_name {
+    display: inline-flex;
+}
+.btn_contact {
+    background-color: var(--primary);
+    border: transparent;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 200px;
+    padding: 15px 10px;
+}
+.btn_contact:hover {
+    background-color: var(--secondary);
+    color: #000000;
+    cursor: pointer;
+    /* font-weight: 700; */
+}
+#photographer_profile_description {
+    margin-top: 10px;
+}
+#sort {
+    margin: 25px 100px;
+}
+.sort_txt {
+    font-weight: bold;
+}
+#sort > select {
+    background-color: var(--primary);
+    border: none;
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+    color: #ffffff;
+    font-size: 18px;
+    height: 60px;
+    padding: 0 5px;
+    width: 150px;
+    cursor: pointer;
+}
+#sort > select > option {
+    border-top: 1px solid #ffffff;
+}
+#photos_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+    margin: 0 100px 50px 100px;
+}
+#empty {
+    display: none;
+}
+.photo {
+    flex: 1 0 30%;
+}
+.photo_img {
+    border-radius: 5px;
+    display: block;
+    height: 400px;
+    margin: auto;
+    object-fit: cover;
+    width: 100%;
+}
+.photo_title {
+    color: var(--primary);
+    font-size: 24px;
+}
+.like {
+    color: var(--primary);
+    float: right;
+    font-size: 24px;
+}
+.like_icon::after {
+    content: "\2764";
+}
+.like_icon:hover {
+    color: var(--primary-text);
+    cursor: pointer;
+}
+#profile_likes_price {
+    background-color: var(--secondary);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    bottom: 0;
+    font-size: 18px;
+    padding: 10px 15px;
+    position: fixed;
+    right: 35px;
+    width: fit-content;
+}
+#profil-tarif-photographe {
+    margin-left: 15px;
+}
+
+#contact {
+    background-color: var(--secondary);
+    display: none;
+    left: 50%;
+    padding: 10px 50px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#contact_close {
+    color: #ffffff;
+    font-size: 32px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    cursor: pointer;
+}
+.form_label {
+    color: #312e2e;
+    font-size: 18px;
+}
+.form_field {
+    border-color: transparent;
+    display: block;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+textarea.form_field {
+    height: 150px;
+    resize: none;
+}
+.submit_btn {
+    background-color: var(--primary);
+    border-color: transparent;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 10px 20px;
+}
+.submit_btn:hover {
+    background-color: var(--primary-text);
+    color: var(--secondary-alternatif);
+    cursor: pointer;
+}
+
+#lightbox {
+    background-color: white;
+    display: none;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.lightbox_content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 100px);
+    justify-content: center;
+    margin: 50px 10%;
+    width: 80%;
+}
+.lightbox_close {
+    align-self: flex-end;
+    width: fit-content;
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 32px;
+}
+.arrow {
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 100px;
+    position: absolute;
+}
+.arrow:hover {
+    color: var(--secondary);
+}
+#previous_page {
+    left: 100px;
+}
+#next_page {
+    right: 100px;
+}
+#previous_page::after {
+    content: "\003C";
+}
+#next_page::after {
+    content: "\003E";
+}
+.lightbox_container {
+    margin: auto;
+    width: fit-content;
+}
+.photo-img,
+.photo-video {
+    display: none;
+}
+.lightbox_link {
+    display: block;
+}
+#photo-lightbox,
+#video-lightbox {
+    display: block;
+    margin: 0 auto;
+    max-height: 800px;
+    max-width: 800px;
+    object-fit: cover;
+}
+#lightbox_title {
+    display: block;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    /* Lightbox */
+    .lightbox_close {
+        font-size: 65px;
+        height: fit-content;
+        left: 50%;
+        right: unset;
+        transform: translateX(-50%);
+    }
+    .lightbox_container {
+        left: 50%;
+        position: absolute;
+        top: 85px;
+        transform: translateX(-50%);
+    }
+    .lightbox_content {
+        height: 100%;
+        margin: auto;
+        width: 100%;
+    }
+    #lightbox_img_container {
+        max-height: 400px;
+        max-width: 100%;
+    }
+    .arrow {
+        font-size: 65px;
+        height: fit-content;
+        top: 0;
+    }
+    #previous_page {
+        left: 0;
+    }
+    #next_page {
+        right: 0;
+    }
+    #lightbox_title {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #photographer_profile {
+        background-color: unset;
+        margin: unset;
+        padding: 0 25px 25px 25px;
+        text-align: center;
+    }
+    .photographer_name {
+        font-size: 25px;
+    }
+    #profil_photographer_photo {
+        display: block;
+        left: unset;
+        margin: auto;
+        position: unset;
+        right: unset;
+        transform: unset;
+    }
+    .btn_contact {
+        bottom: 25px;
+        left: 50%;
+        margin-left: unset;
+        padding: 15px 25px;
+        position: fixed;
+        transform: translateX(-50%);
+        width: fit-content;
+        z-index: 1;
+    }
+    #sort {
+        display: none;
+    }
+    #photos_list {
+        flex-direction: column;
+        gap: 0px 50px;
+        margin: 0 25px;
+    }
+    .photo {
+        flex: 1 0 100%;
+        margin: 5px 0;
+    }
+    .photo_img {
+        width: 100%;
+    }
+    .photo_title,
+    .like,
+    .like_icon {
+        font-size: 20px;
+    }
+    #profile_likes_price {
+      display: none;
+    }
+
+    #contact {
+        height: 70%;
+        min-height: fit-content;
+        top: calc(30% - 20px);
+        transform: translateX(-50%);
+        width: calc(100% - 100px);
+    }
+}
