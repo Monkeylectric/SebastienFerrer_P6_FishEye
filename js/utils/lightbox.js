@@ -1,18 +1,21 @@
 /** Système de lightbox **/
 function openLightbox(index, titre) {
     /* Obtient le nombre total de photos */
-    let totalPhoto = document.querySelectorAll(".photo").length;
+    const totalPhoto = document.querySelectorAll(".photo").length;
     /* Récupère la photo lié à l'index */
-    let photos = document.getElementById(index);
+    const photos = document.getElementById(index);
     /* Obtient la source de l'image */
-    let photosSrc = photos.getElementsByClassName("content_src")[0].getAttribute("src");
+    const photosSrc = photos.getElementsByClassName("content_src")[0].getAttribute("src");
     /* Obtient le type de l'image */
-    let photoType = photosSrc.split('.').pop();
+    const photoType = photosSrc.split('.').pop();
     let photoFormat = "";
 
-    if (photoType === "jpg" || photoType === "jpeg" || photoType == "gif" || photoType === "png") {
+    const imageType = ["jpg", "jpeg", "gif", "png"];
+    const videoType = ["mp4", "mkv", "avi"];
+
+    if (imageType.includes(photoType)) {
         photoFormat = "image";
-    } else if (photoType === "mp4" || photoType === "mkv" || photoType === "avi") {
+    } else if (videoType.includes(photoType)) {
         photoFormat = "video";
     }
 
@@ -85,7 +88,7 @@ function previousPage(index) {
 
 /* Gère la flèche droite */
 function nextPage(index) {
-    let totalPhoto = document.querySelectorAll(".photo").length;
+    const totalPhoto = document.querySelectorAll(".photo").length;
     if (index === (totalPhoto)) {
         let titreApres = Array.from(document.querySelectorAll('.photo')).pop();
         titreApres = titreApres.getElementsByClassName("photo_title")[0].innerHTML;
