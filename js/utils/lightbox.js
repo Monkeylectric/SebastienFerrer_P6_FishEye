@@ -67,6 +67,11 @@ function openLightbox(index, titre) {
                     break;
                 case 'ArrowRight':
                     nextPage(idPhoto + 1);
+                    break;
+                case 'Esc':
+                case 'Escape':
+                    document.querySelector(".lightbox_close").click();
+                    break;
                 default:
                     break;
             }
@@ -89,6 +94,7 @@ function previousPage(index) {
 /* Gère la flèche droite */
 function nextPage(index) {
     const totalPhoto = document.querySelectorAll(".photo").length;
+
     if (index === (totalPhoto)) {
         let titreApres = Array.from(document.querySelectorAll('.photo')).pop();
         titreApres = titreApres.getElementsByClassName("photo_title")[0].innerHTML;
