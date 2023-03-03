@@ -2,10 +2,22 @@
 function contactDisplay(nom) {
     document.getElementsByTagName("body")[0].style.overflow = "hidden";
     document.getElementById("contact").style.display = "block";
-    document.getElementsByClassName("btn-contact")[0].style.display = "none";
     document.getElementById("contact_name").innerHTML = nom;
-    /** Gére les flèches du clavier **/
+
     const actionForm = document.querySelectorAll('.form_action');
+
+    document.onkeydown = function (event) {
+        if (document.getElementById("contact").style.display === "block") {
+            switch (event.key) {
+                case 'Esc':
+                case 'Escape':
+                    document.querySelector("#contact_close").click();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     actionForm.forEach(function (action, i) {
         if (document.getElementById("contact").style.display === "block") {
@@ -33,7 +45,6 @@ function contactDisplay(nom) {
 function contactClose() {
     document.getElementsByTagName("body")[0].style.overflow = "unset";
     document.getElementById("contact").style.display = "none";
-    document.getElementsByClassName("btn-contact")[0].style.display = "block";
 }
 
 /* Valide le formulaire */
