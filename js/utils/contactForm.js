@@ -4,6 +4,8 @@ function contactDisplay(nom) {
     document.getElementById("contact").style.display = "block";
     document.getElementById("contact_name").innerHTML = nom;
 
+    document.querySelector(".contact_content form input").focus();
+
     const actionForm = document.querySelectorAll('.form_action');
 
     document.onkeydown = function (event) {
@@ -39,6 +41,10 @@ function contactDisplay(nom) {
             })
         }
     });
+
+    document.querySelector("#contact_close").addEventListener('click', () => {
+        contactClose();
+    }, { once: true });
 }
 
 /* Fermer le formulaire */

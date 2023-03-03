@@ -19,22 +19,22 @@ export default class PhotographerMedias {
         let mediaType = '';
 
         if (type == 'image') {
-            mediaType = `<img alt="${this.media.description}" class="photo_img content_src" src="assets/photographers/${this.name}/${this.media.image}">`;
+            mediaType = `<img alt="${this.media.title}" class="photo_img content_src" src="assets/photographers/${this.name}/${this.media.image}">`;
         }else {
             mediaType = `
-                <video title="${this.media.description}" controls class="photo_img">
-                    <source class="content_src" src="assets/photographers/${this.name}/${this.media.video}" type="video/mp4">
+                <video title="${this.media.title}" controls class="photo_img">
+                    <source class="content_src" src="./assets/photographers/${this.name}/${this.media.video}" type="video/mp4">
                 </video>`;
         }
 
         let cartePhoto = `
-            <a href="#" class="lightbox_link" aria-label="image en gros plan" onclick="openLightbox(${this.indexPhoto}, '${this.media.title}')">${mediaType}</a>
+            <a href="#" class="lightbox_link" aria-label="Image en gros plan" onclick="openLightbox(${this.indexPhoto}, '${this.media.title}')">${mediaType}</a>
             <div>
                 <span class="photo_title">${this.media.title}</span>
-                <span class="like like-${this.media.id}">
+                <div class="like like-${this.media.id}">
                     <span id="like-${this.media.id}">${this.media.likes}</span>
-                    <span class="like_icon" aria-label="likes" onclick="manageLikes('${this.media.id}', 'like')"></span>
-                </span>
+                    <button role="button" class="like_icon" aria-label="Bouton j'aime" onclick="manageLikes('${this.media.id}', 'like')"></button>
+                </div>
             </div>
         `;
 

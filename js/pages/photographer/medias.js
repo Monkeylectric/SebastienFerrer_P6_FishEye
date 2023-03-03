@@ -35,18 +35,17 @@ export default class Medias {
 
     async getPhotographerMedias(photographerId, name) {
         let mediasData = await this.request.getMedias(photographerId);
-        let photographerMedia;
 
         mediasData.forEach(media => {
             let photoTemplate = new PhotographerMedias(media, name);
 
             if (media.image) {
-                photographerMedia = new PhotographerPhoto(media);
+                new PhotographerPhoto(media);
                 this.listPhotos.append(
                     photoTemplate.createPhotographerMedia('image')
                 );
             }else {
-                photographerMedia = new PhotographerVideo(media);
+                new PhotographerVideo(media);
                 this.listPhotos.append(
                     photoTemplate.createPhotographerMedia('video')
                 );

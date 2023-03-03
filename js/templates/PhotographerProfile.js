@@ -9,7 +9,7 @@ export default class PhotographerProfile {
             <img alt="${this.photographer.name}" class="photographer_img" id="profil_photographer_photo" src="assets/photographers/Photographers_ID_Photos/${this.photographer.portrait}">
             <div id="profile_contact_name">
                 <h1 class="photographer_name">${this.photographer.name}</h1>
-                <button class="btn_contact" onclick="contactDisplay('${this.photographer.name}')">Contactez-moi</button>
+                <button aria-label="Bouton de contact" role="button" class="btn_contact" onclick="contactDisplay('${this.photographer.name}')">Contactez-moi</button>
             </div>
             <div>
                 <span class="photographer_city">${this.photographer.city}, ${this.photographer.country}</span>

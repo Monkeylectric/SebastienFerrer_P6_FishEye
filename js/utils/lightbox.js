@@ -13,6 +13,9 @@ function openLightbox(index, titre) {
     const imageType = ["jpg", "jpeg", "gif", "png"];
     const videoType = ["mp4", "mkv", "avi"];
 
+    /* Focus sur le bouton fermer */
+    // document.querySelector(".lightbox_close").focus();
+
     if (imageType.includes(photoType)) {
         photoFormat = "image";
     } else if (videoType.includes(photoType)) {
@@ -77,6 +80,13 @@ function openLightbox(index, titre) {
             }
         }
     };
+
+    document.querySelector("#contact_close").focus();
+
+    document.querySelector("#contact_close").addEventListener('click', () => {
+        closeLightbox();
+    }, { once: true });
+    
 }
 
 /* Ferme la lightbox */

@@ -34,33 +34,37 @@
     cursor: pointer;
     /* font-weight: 700; */
 }
+.photographer_city {
+    font-size: 1.5rem;
+}
 #photographer_profile_description {
-    margin-top: 10px;
+    margin-top: 2px;
+    font-size: 1.2rem;
 }
 #sort {
     margin: 25px 100px;
 }
 .sort_txt {
     font-weight: bold;
+    font-size: 1.5rem;
 }
-#sort > select {
+#sort > #sort_select {
     background-color: var(--primary);
     border: none;
-    /* border-top-left-radius: 5px;
-    border-top-right-radius: 5px; */
     color: #ffffff;
-    font-size: 18px;
+    font-size: 1.2rem;
     height: 60px;
     padding: 0 5px;
     width: 150px;
     cursor: pointer;
+    border-radius: 5px;
 }
-#sort > select > option {
+#sort > #sort_select > .sort_option {
     border-top: 1px solid #ffffff;
 }
 #photos_list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 33% 33% auto;
     gap: 10px 30px;
     margin: 0 100px 50px 100px;
 }
@@ -68,7 +72,7 @@
     display: none;
 }
 .photo {
-    flex: 1 0 30%;
+    /* flex: 1 0 30%; */
 }
 .photo_img {
     border-radius: 5px;
@@ -80,12 +84,18 @@
 }
 .photo_title {
     color: var(--primary);
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 .like {
     color: var(--primary);
     float: right;
     font-size: 24px;
+}
+.like_icon {
+    color: var(--primary);
+    font-size: 24px;
+    background: none;
+    border: none;
 }
 .like_icon::after {
     content: "\2764";
@@ -119,16 +129,24 @@
     transform: translate(-50%, -50%);
 }
 #contact_close {
-    color: #ffffff;
-    font-size: 32px;
     position: absolute;
-    right: 5px;
-    top: 0;
+    right: 10px;
+    top: 10px;
     cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+#contact_close_icon {
+    color: #ffffff;
+    font-size: 38px;
+}
+#contact h1 {
+    color: #111;
 }
 .form_label {
-    color: #312e2e;
-    font-size: 18px;
+    color: #111;
+    font-size: 22px;
+    font-weight: bold;
 }
 .form_field {
     border-color: transparent;
@@ -147,6 +165,7 @@ textarea.form_field {
     border-radius: 5px;
     color: #ffffff;
     padding: 10px 20px;
+    font-size: 1.2rem;
 }
 .submit_btn:hover {
     background-color: var(--primary-text);
@@ -170,13 +189,17 @@ textarea.form_field {
     margin: 50px 10%;
     width: 80%;
 }
+.lightbox_content button {
+    background-color: transparent;
+    border: none;
+}
 .lightbox_close {
     align-self: flex-end;
     width: fit-content;
     cursor: pointer;
     color: var(--primary);
     font-weight: bold;
-    font-size: 32px;
+    font-size: 42px;
 }
 .arrow {
     color: var(--primary);
@@ -192,12 +215,6 @@ textarea.form_field {
 }
 #next_page {
     right: 100px;
-}
-#previous_page::after {
-    content: "\003C";
-}
-#next_page::after {
-    content: "\003E";
 }
 .lightbox_container {
     margin: auto;
@@ -300,7 +317,7 @@ textarea.form_field {
         margin: 0 25px;
     }
     .photo {
-        flex: 1 0 100%;
+        /* flex: 1 0 100%; */
         margin: 5px 0;
     }
     .photo_img {
